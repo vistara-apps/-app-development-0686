@@ -4,15 +4,16 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        bg: 'hsl(220, 20%, 98%)',
-        text: 'hsl(220, 15%, 25%)',
-        muted: 'hsl(220, 15%, 65%)',
-        accent: 'hsl(150, 70%, 50%)',
-        primary: 'hsl(220, 95%, 45%)',
-        surface: 'hsl(0, 0%, 100%)',
+        bg: 'var(--bg)',
+        text: 'var(--text)',
+        muted: 'var(--muted)',
+        accent: 'var(--accent)',
+        primary: 'var(--primary)',
+        surface: 'var(--surface)',
       },
       borderRadius: {
         'xs': '4px',
