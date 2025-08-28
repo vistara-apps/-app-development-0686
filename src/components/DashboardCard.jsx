@@ -1,5 +1,6 @@
 import React from 'react'
 import { clsx } from 'clsx'
+import { useTheme } from '../contexts/ThemeContext'
 
 export const DashboardCard = ({ 
   title, 
@@ -9,12 +10,16 @@ export const DashboardCard = ({
   variant = 'default',
   children 
 }) => {
+  const { currentTheme } = useTheme();
+  const isDarkTheme = currentTheme.includes('dark');
+  
   return (
     <div className={clsx(
-      'bg-surface rounded-lg shadow-card p-6',
+      'bg-surface rounded-lg shadow-card p-6 theme-transition',
       'animate-fade-in',
       variant === 'apiUsage' && 'border-l-4 border-accent',
-      variant === 'featureToggle' && 'border-l-4 border-primary'
+      variant === 'featureToggle' && 'border-l-4 border-primary',
+      isDarkTheme && 'dark-card'
     )}>
       <div className="flex items-center justify-between">
         <div className="flex-1">

@@ -7,17 +7,21 @@ import {
   Save,
   Mail,
   Phone,
-  Globe
+  Globe,
+  Palette
 } from 'lucide-react'
 import { DashboardCard } from '../components/DashboardCard'
 import { SubscriptionStatusBadge } from '../components/SubscriptionStatusBadge'
 import { FeatureToggle } from '../components/FeatureToggle'
+import { ThemeSelector } from '../components/ThemeSelector'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { useAuth } from '../contexts/AuthContext'
+import { useTheme } from '../contexts/ThemeContext'
 
 export const Settings = () => {
   const { user } = useAuth()
+  const { currentTheme } = useTheme()
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       name: 'John Doe',
@@ -248,6 +252,16 @@ export const Settings = () => {
               </div>
             </div>
           </div>
+        </div>
+      </DashboardCard>
+
+      {/* Theme Settings */}
+      <DashboardCard title="Appearance" icon={Palette}>
+        <div className="space-y-4">
+          <p className="text-sm text-muted mb-4">
+            Customize the look and feel of the application with different themes
+          </p>
+          <ThemeSelector />
         </div>
       </DashboardCard>
 
