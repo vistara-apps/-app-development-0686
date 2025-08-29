@@ -9,7 +9,9 @@ import {
   CheckCircle,
   Cpu,
   Cloud,
-  Users
+  Users,
+  BrainCircuit,
+  Sparkles
 } from 'lucide-react'
 
 const features = [
