@@ -7,12 +7,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: 'hsl(220, 20%, 98%)',
-        text: 'hsl(220, 15%, 25%)',
-        muted: 'hsl(220, 15%, 65%)',
-        accent: 'hsl(150, 70%, 50%)',
-        primary: 'hsl(220, 95%, 45%)',
+        bg: 'hsl(230, 25%, 98%)',
+        text: 'hsl(230, 20%, 20%)',
+        muted: 'hsl(230, 15%, 60%)',
+        accent: 'hsl(170, 80%, 45%)',
+        primary: 'hsl(260, 90%, 55%)',
+        secondary: 'hsl(290, 80%, 60%)',
         surface: 'hsl(0, 0%, 100%)',
+        'surface-dark': 'hsl(230, 20%, 10%)',
+        'surface-accent': 'hsl(230, 30%, 97%)',
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(to right, hsl(260, 90%, 55%), hsl(290, 80%, 60%))',
       },
       borderRadius: {
         'xs': '4px',
@@ -37,6 +43,10 @@ export default {
       animation: {
         'fade-in': 'fadeIn 250ms cubic-bezier(0.22,1,0.36,1)',
         'slide-up': 'slideUp 250ms cubic-bezier(0.22,1,0.36,1)',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 3s ease-in-out infinite',
+        'gradient-shift': 'gradientShift 8s ease infinite',
+        'typing': 'typing 2s steps(20, end), blink-caret .5s step-end infinite',
       },
       keyframes: {
         fadeIn: {
@@ -46,6 +56,23 @@ export default {
         slideUp: {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        gradientShift: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        typing: {
+          'from': { width: '0' },
+          'to': { width: '100%' },
+        },
+        'blink-caret': {
+          'from, to': { borderColor: 'transparent' },
+          '50%': { borderColor: 'currentColor' },
         },
       },
     },
